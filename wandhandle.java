@@ -1,23 +1,18 @@
-class WandAura extends WandBase {
+import javax.swing.*;
+import java.awt.*;
 
-    // Constructor
-    public WandAura() {
+
+class WandHandle extends WandBase {
+    protected ImageIcon handleImage;
+
+    public WandHandle() {
         super();
-        description += " enveloped by a magical glowing aura";
+        handleImage = loadImage("/Users/username/Desktop/wand_handle.png");
+        description += "Added wand handle. ";
     }
 
-    // Load aura image
-    @Override
-    protected void loadImage() {
-        super.loadImage();
-        try {
-            BufferedImage aura = ImageIO.read(new File("wand_aura.png"));
-            Graphics g = image.getGraphics();
-            g.drawImage(aura, 0, 0, null);
-            g.dispose();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        handleImage.paintIcon(this, g, 0, 0);
     }
 }
-w
