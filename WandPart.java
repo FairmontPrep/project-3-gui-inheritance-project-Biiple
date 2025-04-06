@@ -13,7 +13,9 @@ public class WandPart extends JPanel {
         return description;
     }
 
-    protected ImageIcon loadImage(String absolutePath) {
-        return new ImageIcon(absolutePath);
+    protected ImageIcon loadImage(String absolutePath, int width, int height) {
+        ImageIcon original = new ImageIcon(absolutePath);
+        Image scaled = original.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(scaled);
     }
 }
