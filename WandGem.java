@@ -14,15 +14,15 @@ class WandGem extends WandShaft {
         rubyChosen = Math.random() > 0.5;
         if (rubyChosen) {
             gemImage = loadImage("image/wand_gem_ruby.png", 80, 60);
-            description += "Chose Ruby Gem 💎. ";
+            description += "Chose Ruby Gem 💎 (red crystal top). ";
         } else {
             gemImage = loadImage("image/wand_gem_emerald.png", 80, 60);
-            description += "Chose Emerald Gem ✨. ";
+            description += "Chose Emerald Gem ✨ (green crystal top). ";
         }
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        gemImage.paintIcon(this, g, 80, -20);
+        gemImage.paintIcon(this, g, 80, 30);
     }
 }

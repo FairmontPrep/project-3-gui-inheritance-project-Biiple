@@ -7,7 +7,7 @@ public class WandApp extends JFrame {
 
     public WandApp() {
         setTitle("Magic Wand Generator");
-        setSize(320, 370);
+        setSize(320, 420);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -16,7 +16,8 @@ public class WandApp extends JFrame {
         wand.setBounds(0, 0, 300, 300);
 
         JLabel label = new JLabel(wand.getDescription());
-        label.setBounds(10, 300, 300, 30);
+        label.setFont(new Font("Arial", Font.PLAIN, 12));
+        label.setBounds(10, 310, 300, 50);
 
         add(wand);
         add(label);
